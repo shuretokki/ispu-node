@@ -1,0 +1,9 @@
+version = 1
+SPDX-PackageName = "ispu-node"
+SPDX-PackageSupplier = "Tri Rianto Utomo"
+SPDX-PackageDownloadLocation = "NOASSERTION"
+
+[[annotations]]
+path = "**"
+SPDX-FileCopyrightText = "2026 Tri Rianto Utomo, Maliq Rafaldo, Dhani Rakha Aditya Rahma, Syauqi Ihsan Ramadhan, Carmelio S.A."
+SPDX-License-Identifier = "Apache-2.0"
