@@ -1,0 +1,10 @@
+name: 'Moderate PM2.5 is classified SEDANG'
+version: 1
+steps:
+  - wait-serial: 'Air quality monitor ready'
+  - set-control:
+      part-id: pm
+      name: position
+      value: 0.15
+  - delay: 6000ms
+  - wait-serial: 'AIR=SEDANG'

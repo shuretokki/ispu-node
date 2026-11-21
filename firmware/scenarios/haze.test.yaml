@@ -1,0 +1,22 @@
+name: 'Haze is classified BERBAHAYA and the alarm path runs'
+version: 1
+steps:
+  - wait-serial: 'Air quality monitor ready'
+  - set-control:
+      part-id: pm
+      name: position
+      value: 0.85
+  - set-control:
+      part-id: dht
+      name: humidity
+      value: 90
+  - delay: 6000ms
+  - wait-serial: 'AIR=BERBAHAYA'
+  - expect-pin:
+      part-id: esp
+      name: 27
+      value: 1
+  - expect-pin:
+      part-id: esp
+      name: 25
+      value: 0

@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "author": "ispu-node",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -215, "left": -560, "attrs": {} },
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pm", "top": -330, "left": -480, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "gas", "top": -330, "left": -380, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht", "top": -370, "left": -270, "attrs": { "temperature": "30", "humidity": "70" } },
+    { "type": "wokwi-resistor", "id": "rg", "top": 190, "left": -500, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "ry", "top": 190, "left": -420, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "rr", "top": 190, "left": -340, "attrs": { "value": "220" } },
+    { "type": "wokwi-led", "id": "ledg", "top": 237, "left": -456.2, "rotate": 180, "attrs": { "color": "green" } },
+    { "type": "wokwi-led", "id": "ledy", "top": 237, "left": -376.2, "rotate": 180, "attrs": { "color": "yellow" } },
+    { "type": "wokwi-led", "id": "ledr", "top": 237, "left": -296.2, "rotate": 180, "attrs": { "color": "red" } },
+    { "type": "wokwi-buzzer", "id": "bz", "top": 50, "left": 230, "attrs": { "volume": "0.1" } },
+    { "type": "wokwi-servo", "id": "servo", "top": 240, "left": -60, "attrs": {} }
+  ],
+  "connections": [
+    ["esp:TX", "$serialMonitor:RX", "", []],
+    ["esp:RX", "$serialMonitor:TX", "", []],
+
+    ["esp:3V3", "bb1:bp.25", "red", ["h-254.6", "v-53.8"]],
+    ["esp:GND.2", "bb1:tn.21", "black", ["h14", "v-251", "h-419.4"]],
+    ["bb1:tp.3", "bb1:bp.3", "red", ["v0"]],
+    ["bb1:tn.1", "bb1:bn.1", "black", ["v0"]],
+
+    ["pm:VCC", "bb1:tp.10", "red", ["v29.5"]],
+    ["pm:GND", "bb1:tn.9", "black", ["v29.5"]],
+    ["pm:SIG", "esp:34", "blue", ["v7.5", "h226", "v321.2", "h219.6"]],
+
+    ["gas:VCC", "bb1:tp.19", "red", ["v29.5"]],
+    ["gas:GND", "bb1:tn.17", "black", ["v29.5"]],
+    ["gas:SIG", "esp:35", "orange", ["v14.5", "h108", "v323.8", "h237.6"]],
+
+    ["dht:VCC", "bb1:tp.24", "red", ["v23"]],
+    ["dht:GND", "bb1:tn.25", "black", ["v23"]],
+    ["dht:SDA", "esp:15", "green", ["v15.1", "h385.5", "v412.8", "h-39.2"]],
+
+    ["esp:25", "rg:1", "green", ["h-504.6"]],
+    ["rg:2", "ledg:A", "green", []],
+    ["ledg:C", "bb1:bn.10", "black", ["v-270"]],
+
+    ["esp:26", "ry:1", "gold", ["h-424.6"]],
+    ["ry:2", "ledy:A", "gold", []],
+    ["ledy:C", "bb1:bn.17", "black", ["v-270"]],
+
+    ["esp:27", "rr:1", "red", ["h-344.6"]],
+    ["rr:2", "ledr:A", "red", []],
+    ["ledr:C", "bb1:bn.24", "black", ["v-270"]],
+
+    ["bz:2", "esp:4", "purple", ["v10", "h-166.2"]],
+    ["bz:1", "esp:GND.3", "black", ["v26", "h-137", "v-73.6", "h-19.2"]],
+
+    ["servo:GND", "esp:GND.1", "black", ["h-20", "v-136.4", "h84.6"]],
+    ["servo:PWM", "esp:13", "orange", ["h-40", "v-145.8", "h104.6"]],
+    ["servo:V+", "esp:5V", "red", ["h-30", "v-97.9", "h94.6"]]
+  ],
+  "dependencies": {}
+}

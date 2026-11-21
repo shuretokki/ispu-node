@@ -1,0 +1,102 @@
+{
+  "dataset": "UCI Beijing Multi-Site Air Quality, doi 10.24432/C5RK5G, CC BY 4.0",
+  "horizon_hours": 3,
+  "train_rows": 293782,
+  "test_rows": 120816,
+  "train_period": "2013-03 to 2015-12",
+  "test_period": "2016-01 to 2017-02",
+  "features": [
+    "pm25_ugm3",
+    "pm25_trend_ph10",
+    "pm25_delta_1h",
+    "temp_c",
+    "humidity_pct"
+  ],
+  "classes": [
+    "BAIK",
+    "SEDANG",
+    "TIDAK_SEHAT",
+    "BERBAHAYA"
+  ],
+  "accuracy_model": 0.7408869686134287,
+  "accuracy_persistence": 0.7349937094424579,
+  "accuracy_model_on_class_changes": 0.12287222413093045,
+  "share_of_class_changes": 0.26500629055754205,
+  "macro_f1_model": 0.7484835870847951,
+  "macro_f1_persistence": 0.7447176614902478,
+  "accuracy_deployed_c_sample": 0.7402,
+  "c_code_matches_sklearn_sample": 0.9702,
+  "confusion_matrix": [
+    [
+      21294,
+      5914,
+      886,
+      262
+    ],
+    [
+      5495,
+      24042,
+      7391,
+      436
+    ],
+    [
+      301,
+      4590,
+      31405,
+      2454
+    ],
+    [
+      54,
+      139,
+      3383,
+      12770
+    ]
+  ],
+  "per_class": {
+    "BAIK": {
+      "precision": 0.7844827586206896,
+      "recall": 0.7509521794329242,
+      "f1-score": 0.7673513513513514,
+      "support": 28356.0
+    },
+    "SEDANG": {
+      "precision": 0.693152659651146,
+      "recall": 0.6434535916925382,
+      "f1-score": 0.6673791447487126,
+      "support": 37364.0
+    },
+    "TIDAK_SEHAT": {
+      "precision": 0.7292464878671775,
+      "recall": 0.8104516129032258,
+      "f1-score": 0.7677076330746195,
+      "support": 38750.0
+    },
+    "BERBAHAYA": {
+      "precision": 0.8020349202361512,
+      "recall": 0.7812308821730087,
+      "f1-score": 0.7914962191644973,
+      "support": 16346.0
+    },
+    "accuracy": 0.7408869686134287,
+    "macro avg": {
+      "precision": 0.7522292065937911,
+      "recall": 0.7465220665504243,
+      "f1-score": 0.7484835870847951,
+      "support": 120816.0
+    },
+    "weighted avg": {
+      "precision": 0.7408961833671612,
+      "recall": 0.7408869686134287,
+      "f1-score": 0.7398145714426416,
+      "support": 120816.0
+    }
+  },
+  "feature_importance": {
+    "pm25_ugm3": 0.876,
+    "pm25_trend_ph10": 0.037,
+    "pm25_delta_1h": 0.023,
+    "temp_c": 0.021,
+    "humidity_pct": 0.043
+  },
+  "header_bytes": 295144
+}

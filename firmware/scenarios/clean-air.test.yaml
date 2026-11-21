@@ -1,0 +1,14 @@
+name: 'Clean air is classified BAIK'
+version: 1
+steps:
+  - wait-serial: 'Air quality monitor ready'
+  - set-control:
+      part-id: pm
+      name: position
+      value: 0.02
+  - set-control:
+      part-id: dht
+      name: humidity
+      value: 60
+  - delay: 6000ms
+  - wait-serial: 'AIR=BAIK'

@@ -1,0 +1,9 @@
+name: 'Telemetry reaches the broker and a mute command reaches the device'
+version: 1
+steps:
+  - wait-serial: 'Air quality monitor ready'
+  - set-control:
+      part-id: pm
+      name: position
+      value: 0.85
+  - delay: 45000ms
